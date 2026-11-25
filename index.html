@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Jaugueri Exotic — Calzado, sombreros y marroquinería en piel genuina exótica.">
+    <title>JAUGUERI EXOTIC | Pieles Exóticas y Marroquinería</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body data-page="inicio">
+
+<div class="barra-anuncio">
+    ENVÍO GRATIS EN COMPRAS DESDE $3,000 MXN &nbsp;|&nbsp; JAUGUERI EXOTIC · PIELES GENUINAS
+</div>
+
+<header class="header-lujo">
+    <div class="header-contenedor">
+        <button type="button" class="btn-menu-movil" id="btnMenuMovil" aria-label="Abrir menú">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+
+        <a href="index.html" class="marca-logo">
+            <span class="marca-titulo">JAUGUERI EXOTIC</span>
+            <span class="marca-subtitulo">FULL EXOTIC · MÉXICO</span>
+        </a>
+
+        <nav class="nav-principal" id="navPrincipal" aria-label="Navegación principal">
+            <a href="index.html" class="link-nav activo">Inicio</a>
+            <a href="productos.html" class="link-nav">Colección</a>
+            <a href="pedidos.html" class="link-nav">Pedidos</a>
+            <a href="usuarios.html" class="link-nav" id="navCuentaLink">Mi Cuenta</a>
+        </nav>
+
+        <div class="header-iconos">
+            <a href="productos.html" aria-label="Buscar colección"><i class="fa-solid fa-magnifying-glass"></i></a>
+            <a href="usuarios.html" aria-label="Mi cuenta" class="icono-usuario-header" id="iconoUsuarioHeader">
+                <i class="fa-regular fa-user"></i>
+                <span id="nombreUsuarioHeader" class="nombre-header oculto"></span>
+            </a>
+            <a href="pedidos.html" aria-label="Realizar pedido"><i class="fa-solid fa-bag-shopping"></i></a>
+        </div>
+    </div>
+</header>
+
+<main>
+
+    <section class="hero-editorial">
+        <div class="hero-contenido">
+            <span class="hero-etiqueta">COLECCIÓN LIMITED 2026</span>
+            <h1>Jaugueri Exotic en Piel Genuina</h1>
+            <p>
+                Botas vaqueras, sombreros finos y cintos piteados elaborados a mano por maestros
+                talabarteros con pieles exóticas seleccionadas.
+            </p>
+            <div class="hero-acciones">
+                <a href="productos.html" class="btn-lujo">Explorar Colección</a>
+                <a href="pedidos.html" class="btn-lujo-contorno">Hacer un Pedido</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="seccion-contenedor">
+        <div class="encabezado-seccion">
+            <span class="subtitulo-seccion">EXPLORA POR CATEGORÍA</span>
+            <h2>Artesanía de Alta Gama</h2>
+        </div>
+
+        <div class="grid-categorias">
+            <a href="productos.html?cat=Botas" class="card-categoria">
+                <img src="img/bota_cocodrilo.jpg" alt="Botas Exóticas"
+                     onerror="this.src='https://via.placeholder.com/500x600/3d2314/FFFFFF?text=Botas+Exoticas'">
+                <div class="overlay-categoria">
+                    <span>CALZADO</span>
+                    <h3>Botas Exóticas</h3>
+                </div>
+            </a>
+
+            <a href="productos.html?cat=Sombreros" class="card-categoria">
+                <img src="img/sombrero_castor.jpg" alt="Sombreros Finos"
+                     onerror="this.src='https://via.placeholder.com/500x600/4e2e1a/FFFFFF?text=Sombreros+Finos'">
+                <div class="overlay-categoria">
+                    <span>TEXANAS Y SOMBREROS</span>
+                    <h3>Sombreros Finos</h3>
+                </div>
+            </a>
+
+            <a href="productos.html?cat=Cintos" class="card-categoria">
+                <img src="img/cinto_cocodrilo.jpg" alt="Cintos y Accesorios"
+                     onerror="this.src='https://via.placeholder.com/500x600/5c3822/FFFFFF?text=Cintos+Exoticos'">
+                <div class="overlay-categoria">
+                    <span>MARROQUINERÍA</span>
+                    <h3>Cintos y Accesorios</h3>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <section class="seccion-contenedor seccion-clara">
+        <div class="encabezado-seccion">
+            <span class="subtitulo-seccion">PIEZAS SELECTAS</span>
+            <h2>Destacados de la Colección</h2>
+        </div>
+
+        <div id="destacadosInicio" class="grid-productos"></div>
+
+        <div class="centro-accion">
+            <a href="productos.html" class="btn-lujo">Ver los 15 Productos</a>
+        </div>
+    </section>
+
+    <section class="franja-beneficios">
+        <div class="beneficio-item">
+            <i class="fa-solid fa-truck-fast"></i>
+            <h4>Envío Gratis</h4>
+            <p>En compras desde $3,000 MXN a todo el país.</p>
+        </div>
+        <div class="beneficio-item">
+            <i class="fa-solid fa-certificate"></i>
+            <h4>Piel Genuina</h4>
+            <p>Materiales exóticos certificados y trabajo artesanal.</p>
+        </div>
+        <div class="beneficio-item">
+            <i class="fa-solid fa-rotate-left"></i>
+            <h4>Primer Cambio Sin Costo</h4>
+            <p>Garantía de talla y satisfacción en cada pieza.</p>
+        </div>
+    </section>
+
+</main>
+
+<footer class="footer-lujo">
+    <div class="footer-grid">
+        <div>
+            <h3 class="footer-marca">JAUGUERI EXOTIC</h3>
+            <p>Calzado, sombreros y marroquinería en piel exótica confeccionados en León, Guanajuato.</p>
+        </div>
+        <div>
+            <h4>Navegación</h4>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="productos.html">Colección Full Exotic</a></li>
+                <li><a href="pedidos.html">Realizar Pedido</a></li>
+                <li><a href="usuarios.html">Mi Cuenta</a></li>
+            </ul>
+        </div>
+        <div>
+            <h4>Atención al Cliente</h4>
+            <ul>
+                <li>Teléfono: 477 245 8910</li>
+                <li>Correo: ventas@jaugueriexotic.com</li>
+                <li>Lunes a Sábado: 9:00 - 19:00 hrs</li>
+            </ul>
+        </div>
+        <div>
+            <h4>Síguenos</h4>
+            <div class="redes-footer">
+                <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        © 2026 JAUGUERI EXOTIC México. Todos los derechos reservados.
+    </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

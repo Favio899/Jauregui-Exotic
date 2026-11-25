@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Cuenta | JAUGUERI EXOTIC</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body data-page="usuarios">
+
+<div class="barra-anuncio">
+    ENVÍO GRATIS EN COMPRAS DESDE $3,000 MXN &nbsp;|&nbsp; JAUGUERI EXOTIC · PIELES GENUINAS
+</div>
+
+<header class="header-lujo">
+    <div class="header-contenedor">
+        <button type="button" class="btn-menu-movil" id="btnMenuMovil" aria-label="Abrir menú">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+
+        <a href="index.html" class="marca-logo">
+            <span class="marca-titulo">JAUGUERI EXOTIC</span>
+            <span class="marca-subtitulo">FULL EXOTIC · MÉXICO</span>
+        </a>
+
+        <nav class="nav-principal" id="navPrincipal" aria-label="Navegación principal">
+            <a href="index.html" class="link-nav">Inicio</a>
+            <a href="productos.html" class="link-nav">Colección</a>
+            <a href="pedidos.html" class="link-nav">Pedidos</a>
+            <a href="usuarios.html" class="link-nav activo" id="navCuentaLink">Mi Cuenta</a>
+        </nav>
+
+        <div class="header-iconos">
+            <a href="productos.html" aria-label="Buscar colección"><i class="fa-solid fa-magnifying-glass"></i></a>
+            <a href="usuarios.html" aria-label="Mi cuenta" class="icono-usuario-header" id="iconoUsuarioHeader">
+                <i class="fa-regular fa-user"></i>
+                <span id="nombreUsuarioHeader" class="nombre-header oculto"></span>
+            </a>
+            <a href="pedidos.html" aria-label="Realizar pedido"><i class="fa-solid fa-bag-shopping"></i></a>
+        </div>
+    </div>
+</header>
+
+<main class="seccion-contenedor">
+
+    <div class="migas-pan">
+        <a href="index.html">Inicio</a> <span>/</span> <strong>Mi Cuenta</strong>
+    </div>
+
+    <!-- PANEL DE CUENTA ACTIVA (SE MUESTRA AL INICIAR SESIÓN O REGISTRARSE) -->
+    <section id="panelCuentaActiva" class="panel-cuenta oculto">
+        <div class="cuenta-cabecera">
+            <div class="avatar-cuenta">
+                <i class="fa-solid fa-user-check"></i>
+            </div>
+            <div>
+                <span class="subtitulo-seccion">SESIÓN ACTIVA · CLIENTE JAUGUERI EXOTIC</span>
+                <h2 id="perfilNombre">Bienvenido</h2>
+                <p id="perfilCorreo" class="perfil-dato"></p>
+                <p id="perfilTelefono" class="perfil-dato"></p>
+            </div>
+        </div>
+
+        <div class="cuenta-tarjetas">
+            <article class="cuenta-card">
+                <i class="fa-solid fa-bag-shopping"></i>
+                <h3>Realizar un Pedido</h3>
+                <p>Tus datos de cliente ya están listos para agilizar tu próxima compra.</p>
+                <a href="pedidos.html" class="btn-lujo">Ir a Pedidos</a>
+            </article>
+
+            <article class="cuenta-card">
+                <i class="fa-solid fa-hat-cowboy"></i>
+                <h3>Explorar Colección</h3>
+                <p>Descubre nuestras 15 piezas Full Exotic en piel genuina.</p>
+                <a href="productos.html" class="btn-lujo">Ver Catálogo</a>
+            </article>
+        </div>
+
+        <div class="cuenta-pie">
+            <button type="button" id="btnCerrarSesion" class="boton-volver">
+                <i class="fa-solid fa-right-from-bracket"></i> Cerrar Sesión
+            </button>
+        </div>
+    </section>
+
+    <!-- ENCABEZADO Y OPCIONES DE ACCESO (CUANDO NO HAY SESIÓN) -->
+    <section id="bloqueAccesoUsuarios">
+        <div class="encabezado-seccion">
+            <span class="subtitulo-seccion">ACCESO EXCLUSIVO</span>
+            <h2>Iniciar Sesión o Crear Cuenta</h2>
+        </div>
+
+        <section id="opcionesUsuarios" class="opciones-registros">
+            <article class="tarjeta-opcion">
+                <section class="icono-tarjeta">
+                    <i class="fa-solid fa-right-to-bracket"></i>
+                </section>
+                <h3>Iniciar Sesión</h3>
+                <p>
+                    Si ya tienes una cuenta en JAUGUERI EXOTIC, ingresa con tu correo y contraseña
+                    para acceder a tu perfil y agilizar tus pedidos.
+                </p>
+                <button type="button" class="btn-lujo" data-formulario="login">
+                    Iniciar Sesión
+                </button>
+            </article>
+
+            <article class="tarjeta-opcion">
+                <section class="icono-tarjeta">
+                    <i class="fa-solid fa-user-plus"></i>
+                </section>
+                <h3>Crear Cuenta Nueva</h3>
+                <p>
+                    Regístrate para guardar tus datos de cliente, recibir lanzamientos de piezas
+                    Full Exotic y entrar de inmediato a tu cuenta.
+                </p>
+                <button type="button" class="btn-lujo" data-formulario="registro">
+                    Registrarme
+                </button>
+            </article>
+        </section>
+
+        <!-- FORMULARIO DE LOGIN -->
+        <section id="formularioLogin" class="formulario-ventana oculto">
+            <button type="button" class="boton-volver" data-volver>
+                <i class="fa-solid fa-arrow-left"></i> Regresar a opciones
+            </button>
+
+            <section class="contenedor-formulario">
+                <form class="formulario" id="formLogin" method="POST" action="login.php" novalidate>
+                    <header class="encabezado-formulario">
+                        <section class="icono-principal">
+                            <i class="fa-solid fa-right-to-bracket"></i>
+                        </section>
+                        <h2>Iniciar Sesión</h2>
+                        <p>Ingresa tus credenciales para entrar a tu cuenta.</p>
+                    </header>
+
+                    <section class="contenido-formulario">
+                        <section class="campo">
+                            <label for="correoLogin">Correo electrónico</label>
+                            <input type="email" id="correoLogin" name="correo"
+                                placeholder="ejemplo@correo.com" maxlength="100" required>
+                        </section>
+
+                        <section class="campo">
+                            <label for="claveLogin">Contraseña</label>
+                            <input type="password" id="claveLogin" name="password"
+                                placeholder="Mínimo 6 caracteres" minlength="6" maxlength="50" required>
+                        </section>
+
+                        <section class="acciones">
+                            <button type="submit" class="boton">
+                                <i class="fa-solid fa-right-to-bracket"></i>
+                                <span class="texto-boton">Ingresar a mi cuenta</span>
+                                <span class="spinner" aria-hidden="true"></span>
+                            </button>
+
+                            <p class="confidencialidad">
+                                <i class="fa-solid fa-lock"></i>
+                                La información será tratada de manera confidencial.
+                            </p>
+
+                            <p id="respuestaLogin" class="respuesta-formulario"
+                                role="status" aria-live="polite"></p>
+                        </section>
+                    </section>
+                </form>
+            </section>
+        </section>
+
+        <!-- FORMULARIO DE REGISTRO -->
+        <section id="formularioRegistro" class="formulario-ventana oculto">
+            <button type="button" class="boton-volver" data-volver>
+                <i class="fa-solid fa-arrow-left"></i> Regresar a opciones
+            </button>
+
+            <section class="contenedor-formulario">
+                <form class="formulario" id="formRegistroUsuario" method="POST" action="registrar_usuario.php" novalidate>
+                    <header class="encabezado-formulario">
+                        <section class="icono-principal">
+                            <i class="fa-solid fa-user-plus"></i>
+                        </section>
+                        <h2>Registro de Usuario</h2>
+                        <p>Completa el formulario para crear tu cuenta y entrar automáticamente.</p>
+                    </header>
+
+                    <section class="contenido-formulario">
+                        <section class="campo">
+                            <label for="nombreUsuario">Nombre completo</label>
+                            <input type="text" id="nombreUsuario" name="nombre"
+                                placeholder="Nombre completo" maxlength="100" required>
+                        </section>
+
+                        <section class="campo">
+                            <label for="correoUsuario">Correo electrónico</label>
+                            <input type="email" id="correoUsuario" name="correo"
+                                placeholder="ejemplo@correo.com" maxlength="100" required>
+                        </section>
+
+                        <section class="campo">
+                            <label for="telefonoUsuario">Número telefónico</label>
+                            <input type="tel" id="telefonoUsuario" name="telefono"
+                                placeholder="Ejemplo: 4771234567" maxlength="20"
+                                pattern="[0-9+\-\s()]{10,20}" required>
+                        </section>
+
+                        <section class="campo">
+                            <label for="claveUsuario">Contraseña</label>
+                            <input type="password" id="claveUsuario" name="password"
+                                placeholder="Mínimo 6 caracteres" minlength="6" maxlength="50" required>
+                        </section>
+
+                        <section class="aceptacion">
+                            <input type="checkbox" id="aceptoUsuario" required>
+                            <label for="aceptoUsuario">
+                                Confirmo que los datos son correctos y autorizo su uso para crear mi cuenta.
+                            </label>
+                        </section>
+
+                        <section class="acciones">
+                            <button type="submit" class="boton">
+                                <i class="fa-solid fa-user-check"></i>
+                                <span class="texto-boton">Crear cuenta y entrar</span>
+                                <span class="spinner" aria-hidden="true"></span>
+                            </button>
+
+                            <p class="confidencialidad">
+                                <i class="fa-solid fa-lock"></i>
+                                La información será tratada de manera confidencial.
+                            </p>
+
+                            <p id="respuestaRegistroUsuario" class="respuesta-formulario"
+                                role="status" aria-live="polite"></p>
+                        </section>
+                    </section>
+                </form>
+            </section>
+        </section>
+    </section>
+
+</main>
+
+<footer class="footer-lujo">
+    <div class="footer-bottom">
+        © 2026 JAUGUERI EXOTIC México. Todos los derechos reservados.
+    </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

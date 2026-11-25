@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedidos | JAUGUERI EXOTIC</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body data-page="pedidos">
+
+<div class="barra-anuncio">
+    ENVÍO GRATIS EN COMPRAS DESDE $3,000 MXN &nbsp;|&nbsp; JAUGUERI EXOTIC · PIELES GENUINAS
+</div>
+
+<header class="header-lujo">
+    <div class="header-contenedor">
+        <button type="button" class="btn-menu-movil" id="btnMenuMovil" aria-label="Abrir menú">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+
+        <a href="index.html" class="marca-logo">
+            <span class="marca-titulo">JAUGUERI EXOTIC</span>
+            <span class="marca-subtitulo">FULL EXOTIC · MÉXICO</span>
+        </a>
+
+        <nav class="nav-principal" id="navPrincipal" aria-label="Navegación principal">
+            <a href="index.html" class="link-nav">Inicio</a>
+            <a href="productos.html" class="link-nav">Colección</a>
+            <a href="pedidos.html" class="link-nav activo">Pedidos</a>
+            <a href="usuarios.html" class="link-nav" id="navCuentaLink">Mi Cuenta</a>
+        </nav>
+
+        <div class="header-iconos">
+            <a href="productos.html" aria-label="Buscar colección"><i class="fa-solid fa-magnifying-glass"></i></a>
+            <a href="usuarios.html" aria-label="Mi cuenta" class="icono-usuario-header" id="iconoUsuarioHeader">
+                <i class="fa-regular fa-user"></i>
+                <span id="nombreUsuarioHeader" class="nombre-header oculto"></span>
+            </a>
+            <a href="pedidos.html" aria-label="Realizar pedido"><i class="fa-solid fa-bag-shopping"></i></a>
+        </div>
+    </div>
+</header>
+
+<main class="seccion-contenedor">
+
+    <div class="migas-pan">
+        <a href="index.html">Inicio</a> <span>/</span> <strong>Realizar Pedido</strong>
+    </div>
+
+    <section class="contenedor-formulario">
+        <form class="formulario" id="formPedido" method="POST" action="guardar_pedido.php" novalidate>
+
+            <header class="encabezado-formulario">
+                <section class="icono-principal">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                </section>
+                <h2>Solicitud de Pedido</h2>
+                <p>Completa tus datos y elige la pieza de nuestra colección para procesar tu orden.</p>
+            </header>
+
+            <section class="contenido-formulario">
+
+                <section class="campo">
+                    <label for="nombreCliente">Nombre completo</label>
+                    <input type="text" id="nombreCliente" name="nombre_cliente"
+                        placeholder="Nombre y apellidos" maxlength="100" required>
+                </section>
+
+                <section class="campo-doble">
+                    <section class="campo">
+                        <label for="correoCliente">Correo electrónico</label>
+                        <input type="email" id="correoCliente" name="correo"
+                            placeholder="ejemplo@correo.com" maxlength="100" required>
+                    </section>
+
+                    <section class="campo">
+                        <label for="telefonoCliente">Número telefónico</label>
+                        <input type="tel" id="telefonoCliente" name="telefono"
+                            placeholder="Ejemplo: 4771234567" maxlength="20"
+                            pattern="[0-9+\-\s()]{10,20}" required>
+                    </section>
+                </section>
+
+                <section class="campo">
+                    <label for="productoPedido">Artículo a solicitar</label>
+                    <select id="productoPedido" name="producto" required>
+                        <option value="">Selecciona una pieza del catálogo</option>
+                    </select>
+                </section>
+
+                <section class="campo-doble">
+                    <section class="campo">
+                        <label for="cantidadPedido">Cantidad</label>
+                        <input type="number" id="cantidadPedido" name="cantidad"
+                            min="1" max="50" value="1" required>
+                    </section>
+
+                    <section class="campo">
+                        <label for="tallaPedido">Talla / Medida</label>
+                        <input type="text" id="tallaPedido" name="talla"
+                            placeholder="Ej. 27.5 MX / Talla 34 / 58 cm" maxlength="40" required>
+                    </section>
+                </section>
+
+                <section class="campo">
+                    <label for="metodoPago">Método de pago</label>
+                    <select id="metodoPago" name="metodo_pago" required>
+                        <option value="">Selecciona un método de pago</option>
+                        <option value="Transferencia bancaria">Transferencia bancaria</option>
+                        <option value="Tarjeta de crédito o débito">Tarjeta de crédito o débito</option>
+                        <option value="Pago contra entrega">Pago contra entrega</option>
+                        <option value="Depósito en efectivo">Depósito en efectivo</option>
+                    </select>
+                </section>
+
+                <section class="campo">
+                    <label for="direccionPedido">Dirección completa de envío</label>
+                    <textarea id="direccionPedido" name="direccion"
+                        rows="4" maxlength="500" required
+                        placeholder="Calle, número, colonia, código postal, ciudad y estado..."></textarea>
+                </section>
+
+                <section class="campo">
+                    <label for="notasPedido">Especificaciones adicionales (opcional)</label>
+                    <textarea id="notasPedido" name="notas"
+                        rows="3" maxlength="500"
+                        placeholder="Tipo de horma, grabado personalizado, referencias de entrega..."></textarea>
+                </section>
+
+                <section class="resumen-total">
+                    <span>Total estimado:</span>
+                    <strong id="totalPedidoTexto">$0.00 MXN</strong>
+                </section>
+
+                <section class="aceptacion">
+                    <input type="checkbox" id="aceptoPedido" required>
+                    <label for="aceptoPedido">
+                        Confirmo que los datos proporcionados son correctos y autorizo que se
+                        utilicen para el procesamiento y envío de mi pedido.
+                    </label>
+                </section>
+
+                <section class="acciones">
+                    <button type="submit" class="boton">
+                        <i class="fa-solid fa-paper-plane"></i>
+                        <span class="texto-boton">Confirmar pedido</span>
+                        <span class="spinner" aria-hidden="true"></span>
+                    </button>
+
+                    <p class="confidencialidad">
+                        <i class="fa-solid fa-lock"></i>
+                        La información será tratada de manera confidencial.
+                    </p>
+
+                    <p id="respuestaPedido" class="respuesta-formulario"
+                        role="status" aria-live="polite"></p>
+                </section>
+
+            </section>
+        </form>
+    </section>
+
+</main>
+
+<footer class="footer-lujo">
+    <div class="footer-bottom">
+        © 2026 JAUGUERI EXOTIC México. Todos los derechos reservados.
+    </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
